@@ -1,0 +1,14 @@
+version: '2'
+#代码目录请在.env 文件中配置
+services:
+  testaa:
+    image: 'tianhuo/web:php72'
+    container_name: tweb
+    ports:
+      - 8080:80
+    volumes:
+      - ${coderoot}:/wwwroot
+      - ${nginx_config}:/etc/nginx/conf.d
+    stdin_open: true
+    tty: true
+
